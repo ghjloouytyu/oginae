@@ -7,7 +7,7 @@ agent:
 execution_time_limit:
   hours: 24
 blocks:
-  - name: Ready
+  - name: Test
     task:
       jobs:
         - name: go test
